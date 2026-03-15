@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-4xl font-serif mb-8 text-center">Custom Inquiries</h1>
+        <div class="bg-analog-black border border-analog-gold/30 p-8 rounded-lg shadow-2xl">
+            <p class="mb-8 text-center text-analog-cream/70">
+                Interested in a custom commission or have a technical question? 
+                Fill out the form below. We respond to all inquiries within 48 hours.
+            </p>
+            
+            <form class="space-y-6">
+                <div>
+                    <label class="block font-mono text-xs uppercase text-analog-gold mb-2">Name</label>
+                    <input type="text" class="w-full bg-black/50 border border-analog-gold/30 rounded p-3 text-analog-cream focus:border-analog-gold focus:outline-none transition-colors" />
+                </div>
+                <div>
+                    <label class="block font-mono text-xs uppercase text-analog-gold mb-2">Email</label>
+                    <input type="email" class="w-full bg-black/50 border border-analog-gold/30 rounded p-3 text-analog-cream focus:border-analog-gold focus:outline-none transition-colors" />
+                </div>
+                <div>
+                    <label class="block font-mono text-xs uppercase text-analog-gold mb-2">Message</label>
+                    <textarea rows="5" class="w-full bg-black/50 border border-analog-gold/30 rounded p-3 text-analog-cream focus:border-analog-gold focus:outline-none transition-colors"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-analog-gold text-analog-black font-bold py-3 rounded hover:bg-analog-cream transition-colors uppercase tracking-widest">
+                    Send Transmission
+                </button>
+            </form>
+        </div>
+    </div>
+</Layout>

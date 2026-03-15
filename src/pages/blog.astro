@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getPosts } from '../lib/wordpress';
+
+const posts = await getPosts();
+---
+
+<Layout title="Engineering Notes">
+    <div class="max-w-3xl mx-auto">
+        <div class="mb-16 text-center">
+            <h1 class="text-4xl md:text-5xl font-serif mb-4">Engineering Notes</h1>
+            <p class="font-mono text-analog-gold text-sm">TRANSMISSIONS FROM THE WORKBENCH</p>
+        </div>
+
+        <div class="space-y-16">
+            {posts.map((post) => (
+                <article class="border-b border-analog-gold/20 pb-16 last:border-0">
+                    <div class="mb-4 font-mono text-xs text-analog-gold/60">{post.date}</div>
+                    <h2 class="text-3xl font-serif mb-4 hover:text-analog-gold transition-colors">
+                        <a href="#">{post.title}</a>
+                    </h2>
+                    <p class="text-lg text-analog-cream/80 mb-6 leading-relaxed">
+                        {post.excerpt}
+                    </p>
+                    <a href="#" class="font-mono text-sm border-b border-analog-gold/50 hover:border-analog-gold text-analog-gold inline-block pb-1">
+                        READ ENTRY ->
+                    </a>
+                </article>
+            ))}
+        </div>
+    </div>
+</Layout>

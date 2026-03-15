@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getProducts } from '../../lib/wordpress';
+import AudioPlayer from '../../components/AudioPlayer';
+import Knob from '../../components/Knob';
+
+export async function getStaticPaths() {
+  const products = await getProducts();
+  return products.map(product => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+---
+
+<Layout title={product.name}>
+    <div class="mb-8">
+        <a href="/shop" class="text-sm font-mono text-analog-gold hover:text-analog-cream mb-4 inline-block">&larr; BACK TO SHOP</a>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <!-- Images -->
+        <div class="space-y-4">
+            <div class="aspect-video bg-black/50 rounded-lg overflow-hidden border border-analog-gold/20 shadow-2xl">
+                 <img src={product.images[0].src} alt={product.name} class="w-full h-full object-cover" />
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+                 <!-- Mock Thumbnails -->
+                 <div class="aspect-video bg-black/30 rounded border border-analog-gold/10"></div>
+                 <div class="aspect-video bg-black/30 rounded border border-analog-gold/10"></div>
+                 <div class="aspect-video bg-black/30 rounded border border-analog-gold/10"></div>
+            </div>
+        </div>
+
+        <!-- Details -->
+        <div>
+            <h1 class="text-4xl md:text-5xl font-serif font-bold mb-2">{product.name}</h1>
+            <p class="text-2xl font-mono text-analog-gold mb-6">${product.price}</p>
+            
+            <div class="prose prose-invert prose-p:text-analog-cream/80 max-w-none mb-8">
+                <p>{product.description}</p>
+            </div>
+
+            <div class="mb-8 bg-black/20 p-6 rounded-lg border border-analog-gold/10">
+                <h3 class="font-mono text-sm uppercase text-analog-gold/60 mb-4">Specs</h3>
+                <ul class="space-y-2 font-mono text-sm">
+                    {product.attributes.map((attr) => (
+                        <li class="flex justify-between border-b border-white/5 pb-1">
+                            <span>{attr.name}</span>
+                            <span class="text-analog-cream">{attr.options[0]}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div class="flex gap-4 mb-12">
+                <button class="flex-1 bg-analog-gold text-analog-black font-bold py-4 rounded hover:bg-analog-cream transition-colors uppercase tracking-widest shadow-[0_0_20px_rgba(197,160,89,0.3)]">
+                    Add to Cart
+                </button>
+            </div>
+            
+            <!-- Audio Demo -->
+            <div class="mb-8">
+                <h3 class="font-serif text-xl mb-4 flex items-center gap-2">
+                    <span class="w-2 h-2 bg-analog-gold rounded-full animate-pulse"></span>
+                    Audio Demo
+                </h3>
+                <AudioPlayer client:load />
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Experience -->
+    <div class="py-12 border-t border-analog-gold/20">
+        <h2 class="text-center font-serif text-3xl mb-8">Feel the Circuit</h2>
+        <div class="flex flex-wrap justify-center gap-12 p-8 bg-wood-grain rounded-xl shadow-inner border border-black/50 max-w-4xl mx-auto">
+            <Knob client:visible label="Cutoff" min={0} max={100} value={75} />
+            <Knob client:visible label="Resonance" min={0} max={100} value={40} />
+            <Knob client:visible label="Attack" min={0} max={100} value={10} />
+            <Knob client:visible label="Decay" min={0} max={100} value={30} />
+            <Knob client:visible label="Drive" min={0} max={100} value={60} />
+        </div>
+        <p class="text-center mt-4 text-xs font-mono text-analog-gold/60">* Interactive simulation</p>
+    </div>
+</Layout>

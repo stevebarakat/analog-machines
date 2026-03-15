@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getProducts } from '../lib/wordpress';
+import ProductCard from '../components/ProductCard.astro';
+
+const products = await getProducts();
+---
+
+<Layout title="Shop">
+    <div class="mb-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-serif mb-4">The Collection</h1>
+        <p class="text-analog-cream/60 max-w-2xl mx-auto">
+            Small-batch synthesizers, designed and assembled by hand. 
+            Each instrument is calibrated to provide the most musical response possible.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map((product) => (
+            <ProductCard product={product} />
+        ))}
+    </div>
+</Layout>

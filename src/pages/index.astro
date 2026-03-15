@@ -1,0 +1,429 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SonicLab from "../components/SonicLab";
+---
+
+<Layout title="Home">
+  <!-- Navigation -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center"
+  >
+    <div class="flex items-center space-x-2">
+      <span class="material-symbols-outlined text-amber-500 text-3xl"
+        >electric_bolt</span
+      >
+      <span class="font-serif text-2xl tracking-tight text-white"
+        >Analog Machines</span
+      >
+    </div>
+    <div
+      class="hidden md:flex space-x-8 font-mono text-sm uppercase tracking-widest text-gray-400"
+    >
+      <a href="#instruments" class="hover:text-amber-500 transition-colors"
+        >Instruments</a
+      >
+      <a href="#lab" class="hover:text-amber-500 transition-colors">Sonic Lab</a
+      >
+      <a href="#philosophy" class="hover:text-amber-500 transition-colors"
+        >Philosophy</a
+      >
+      <a href="#artists" class="hover:text-amber-500 transition-colors"
+        >Artists</a
+      >
+    </div>
+    <button
+      class="bg-amber-600 hover:bg-amber-500 text-black font-bold px-6 py-2 rounded-sm transition-all text-xs uppercase tracking-tighter cursor-pointer"
+    >
+      Build Yours
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section
+    class="relative h-screen flex items-center justify-center overflow-hidden pt-16"
+  >
+    <img
+      src="/images/analog-darkness.webp"
+      alt="Analog Machines Hero"
+      class="absolute inset-0 w-full h-full object-cover opacity-40"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent"
+    >
+    </div>
+
+    <div class="relative z-10 text-center px-4">
+      <h1
+        class="font-serif text-6xl md:text-8xl mb-6 tracking-tighter glow-text text-white"
+      >
+        Electric Soul.
+      </h1>
+      <p
+        class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 font-light leading-relaxed"
+      >
+        Hand-wired in the high desert. Discrete circuitry designed for the <span
+          class="text-amber-500 italic">unpredictable beauty</span
+        > of voltage drift. No menus. No presets. Just electricity.
+      </p>
+      <div
+        class="mt-10 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6"
+      >
+        <a
+          href="#lab"
+          class="px-8 py-3 border border-amber-500/50 text-amber-500 font-mono text-sm hover:bg-amber-500/10 transition-all flex items-center"
+        >
+          <span class="material-symbols-outlined mr-2">graphic_eq</span> HEAR THE
+          DRIFT
+        </a>
+        <a
+          href="#instruments"
+          class="px-8 py-3 bg-white text-black font-mono text-sm hover:bg-gray-200 transition-all"
+        >
+          EXPLORE COLLECTION
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Instruments Grid -->
+  <section id="instruments" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="mb-16">
+      <h2
+        class="font-mono text-amber-500 text-sm mb-2 uppercase tracking-[0.3em]"
+      >
+        The Collection
+      </h2>
+      <h3 class="font-serif text-4xl md:text-5xl text-white">
+        Boutique Architecture.
+      </h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Product 1 -->
+      <div
+        class="group relative bg-[#151515] border border-white/5 p-4 rounded-lg hover:border-amber-500/30 transition-all"
+      >
+        <div class="overflow-hidden rounded mb-6 aspect-[4/3]">
+          <img
+            src="/images/monolith.webp"
+            alt="The Monolith"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+        <div class="flex justify-between items-end">
+          <div>
+            <h4 class="font-serif text-2xl mb-1 text-white">The Monolith</h4>
+            <p class="font-mono text-xs text-amber-500/70">
+              3-VCO MONOPHONIC LEAD
+            </p>
+          </div>
+          <span class="text-2xl font-mono text-white">$1,899</span>
+        </div>
+        <ul
+          class="mt-6 space-y-2 text-sm text-gray-400 font-light border-t border-white/10 pt-4"
+        >
+          <li class="flex items-center">
+            <span
+              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
+              >check_circle</span
+            > 24dB Moog-style Ladder Filter
+          </li>
+          <li class="flex items-center">
+            <span
+              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
+              >check_circle</span
+            > Pure Discrete Signal Path
+          </li>
+          <li class="flex items-center">
+            <span
+              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
+              >check_circle</span
+            > Walnut End Cheeks
+          </li>
+        </ul>
+      </div>
+
+      <!-- Product 2 -->
+      <div
+        class="group relative bg-[#151515] border border-white/5 p-4 rounded-lg hover:border-amber-500/30 transition-all"
+      >
+        <div class="overflow-hidden rounded mb-6 aspect-[4/3]">
+          <img
+            src="/images/prism.webp"
+            alt="The Prism"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+        <div class="flex justify-between items-end">
+          <div>
+            <h4 class="font-serif text-2xl mb-1 text-white">The Prism</h4>
+            <p class="font-mono text-xs text-amber-500/70">
+              8-VOICE POLYPHONIC POWER
+            </p>
+          </div>
+          <span class="text-2xl font-mono text-white">$3,450</span>
+        </div>
+        <ul
+          class="mt-6 space-y-2 text-sm text-gray-400 font-light border-t border-white/10 pt-4"
+        >
+          <li class="flex items-center">
+            <span
+              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
+              >check_circle</span
+            > Stereo Analog Path
+          </li>
+          <li class="flex items-center">
+            <span
+              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
+              >check_circle</span
+            > 64-Slot Modulation Matrix
+          </li>
+          <li class="flex items-center">
+            <span
+              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
+              >check_circle</span
+            > Fatar TP/9S Keybed
+          </li>
+        </ul>
+      </div>
+
+      <!-- Product 3 -->
+      <div
+        class="group relative bg-[#151515] border border-white/5 p-4 rounded-lg hover:border-amber-500/30 transition-all"
+      >
+        <div class="overflow-hidden rounded mb-6 aspect-[4/3]">
+          <img
+            src="/images/ember.webp"
+            alt="The Ember"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+        <div class="flex justify-between items-end">
+          <div>
+            <h4 class="font-serif text-2xl mb-1 text-white">The Ember</h4>
+            <p class="font-mono text-xs text-amber-500/70">
+              6-CHANNEL ANALOG DRUMS
+            </p>
+          </div>
+          <span class="text-2xl font-mono text-white">$1,250</span>
+        </div>
+        <ul
+          class="mt-6 space-y-2 text-sm text-gray-400 font-light border-t border-white/10 pt-4"
+        >
+          <li class="flex items-center">
+            <span
+              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
+              >check_circle</span
+            > Individual Voice Outs
+          </li>
+          <li class="flex items-center">
+            <span
+              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
+              >check_circle</span
+            > Tube Drive Output Stage
+          </li>
+          <li class="flex items-center">
+            <span
+              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
+              >check_circle</span
+            > Cold Rolled Steel Case
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Sonic Lab -->
+  <section id="lab" class="py-24 bg-zinc-950 relative border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2
+          class="font-mono text-amber-500 text-sm mb-2 uppercase tracking-[0.3em]"
+        >
+          The Sonic Lab
+        </h2>
+        <h3 class="font-serif text-5xl text-white">Experience the Circuit.</h3>
+        <p class="mt-4 text-gray-400">
+          Play with our virtual "Monolith" oscillator and filter module below.
+        </p>
+      </div>
+
+      <SonicLab client:visible />
+    </div>
+  </section>
+
+  <!-- The Discrete Difference (Why Analog?) -->
+  <section id="philosophy" class="py-24 px-6 overflow-hidden">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16"
+    >
+      <div class="md:w-1/2">
+        <h2
+          class="font-mono text-amber-500 text-sm mb-2 uppercase tracking-[0.3em]"
+        >
+          The Philosophy
+        </h2>
+        <h3 class="font-serif text-5xl mb-8 text-white">
+          The Beauty of Imperfection.
+        </h3>
+        <div class="space-y-6 text-gray-400 leading-relaxed text-lg font-light">
+          <p>
+            Most modern synthesizers use integrated circuits (ICs)—mass-produced
+            chips that offer clinical precision. At <span
+              class="text-white font-medium">Analog Machines</span
+            >, we return to <span class="text-amber-500 italic"
+              >Discrete Design</span
+            >.
+          </p>
+          <p>
+            We use individual, high-tolerance transistors, resistors, and
+            capacitors. This allows for <span class="text-white font-medium"
+              >Drift</span
+            >—tiny fluctuations in voltage caused by temperature and heat. This
+            drift is what gives analog gear its "living" quality. No two notes
+            sound exactly the same.
+          </p>
+          <div class="flex items-start space-x-4 pt-4 border-t border-white/10">
+            <span class="material-symbols-outlined text-amber-600 text-3xl"
+              >thermostat</span
+            >
+            <p class="text-sm italic">
+              "Analog synthesizers embrace noise as an integral part of their
+              sonic palette, resulting in a 80dB signal-to-noise ratio that
+              breathes life into the music."
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/2 relative">
+        <img
+          src="/images/circuit-board.webp"
+          alt="Hand Soldered Circuitry"
+          class="rounded-lg shadow-2xl border border-white/10"
+        />
+        <div
+          class="absolute -bottom-6 -left-6 bg-amber-600 text-black px-6 py-4 font-mono text-xs uppercase tracking-widest font-bold"
+        >
+          100% Discrete Audio Path
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artists Spotlight -->
+  <section id="artists" class="py-24 bg-zinc-950 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2
+        class="font-mono text-amber-500 text-sm mb-2 uppercase tracking-[0.3em] text-center"
+      >
+        Artists in the Void
+      </h2>
+      <h3 class="font-serif text-5xl mb-16 text-center text-white">
+        Sonic Pioneers.
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Artist 1 -->
+        <div class="text-center group">
+          <div
+            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 transition-all p-2 mb-6"
+          >
+            <img
+              src="/images/TrentReznor.webp"
+              alt="Trent Reznor"
+              class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
+            />
+          </div>
+          <h5 class="font-mono text-sm uppercase tracking-widest text-white">
+            Trent Reznor
+          </h5>
+          <p class="text-[10px] text-gray-500 mt-2 uppercase">
+            Industrial Icon
+          </p>
+        </div>
+        <!-- Artist 2 -->
+        <div class="text-center group">
+          <div
+            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 transition-all p-2 mb-6"
+          >
+            <img
+              src="/images/HansZimmer.webp"
+              alt="Hans Zimmer"
+              class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
+            />
+          </div>
+          <h5 class="font-mono text-sm uppercase tracking-widest text-white">
+            Hans Zimmer
+          </h5>
+          <p class="text-[10px] text-gray-500 mt-2 uppercase">
+            Cinematic Legend
+          </p>
+        </div>
+        <!-- Artist 3 -->
+        <div class="text-center group">
+          <div
+            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 transition-all p-2 mb-6"
+          >
+            <img
+              src="/images/SuzanneCiani.webp"
+              alt="Suzanne Ciani"
+              class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
+            />
+          </div>
+          <h5 class="font-mono text-sm uppercase tracking-widest text-white">
+            Suzanne Ciani
+          </h5>
+          <p class="text-[10px] text-gray-500 mt-2 uppercase">
+            Modular Pioneer
+          </p>
+        </div>
+        <!-- Artist 4 -->
+        <div class="text-center group">
+          <div
+            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 transition-all p-2 mb-6"
+          >
+            <img
+              src="/images/AphexTwin.webp"
+              alt="Richard D. James"
+              class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
+            />
+          </div>
+          <h5 class="font-mono text-sm uppercase tracking-widest text-white">
+            Aphex Twin
+          </h5>
+          <p class="text-[10px] text-gray-500 mt-2 uppercase">IDM Visionary</p>
+        </div>
+      </div>
+
+      <div
+        class="mt-16 text-center text-xs font-mono text-gray-500 max-w-2xl mx-auto leading-relaxed"
+      >
+        Our designs are inspired by the legacies of Robert Moog, Don Buchla, and
+        Dave Smith—masters who proved that electricity is the ultimate
+        instrument.
+      </div>
+    </div>
+  </section>
+
+  <!-- Build CTA -->
+  <section
+    class="py-24 bg-amber-600 text-black text-center relative overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 opacity-10 font-mono text-[200px] select-none pointer-events-none -rotate-12 translate-y-12"
+    >
+      ANALOG
+    </div>
+    <div class="relative z-10 px-6">
+      <h3 class="font-serif text-5xl mb-6">Ready to find your sound?</h3>
+      <p class="max-w-xl mx-auto mb-10 text-black/80 font-medium">
+        Our waitlist for the 2026 Batch of The Monolith is now open. Each unit
+        takes 4 weeks of hand-assembly and testing.
+      </p>
+      <button
+        class="bg-black text-white px-10 py-4 font-mono text-sm hover:scale-105 transition-transform uppercase tracking-widest cursor-pointer"
+        >Reserve Build Slot</button
+      >
+    </div>
+  </section>
+</Layout>
