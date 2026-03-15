@@ -115,18 +115,18 @@ export default function SonicLab() {
             <div className="bg-[#1a1a1a] p-8 border-r border-[#222] flex flex-col justify-between">
                 <div>
                     <div className="flex items-center justify-between mb-4">
-                        <span className="font-mono text-xs text-amber-200/50 uppercase">Oscilloscope</span>
+                        <span className="font-mono text-xs text-amber-200/80 uppercase">Oscilloscope</span>
                         <div className={`w-3 h-3 rounded-full bg-red-600 shadow-[0_0_8px_red] ${isPowerOn ? 'animate-pulse' : 'opacity-20'}`}></div>
                     </div>
                     <div className="bg-black/80 rounded border border-green-900/50 p-2 overflow-hidden">
-                        <canvas ref={canvasRef} className="w-full h-[120px] opacity-90" width={596} height={240}></canvas>
+                        <canvas ref={canvasRef} role="img" aria-label="Oscilloscope waveform display" className="w-full h-[120px] opacity-90" width={596} height={240}></canvas>
                     </div>
                 </div>
                 
                 <div className="mt-8 flex items-center justify-center space-x-4">
-                    <span className="font-mono text-xs uppercase text-gray-400">Power</span>
-                    <label className="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" onChange={togglePower} className="sr-only peer" />
+                    <span id="power-label" className="font-mono text-xs uppercase text-gray-400">Power</span>
+                    <label className="relative inline-flex items-center cursor-pointer" aria-label="Power">
+                        <input type="checkbox" onChange={togglePower} className="sr-only peer" aria-labelledby="power-label" />
                         <div className="w-14 h-7 bg-zinc-800 rounded-full peer peer-checked:bg-amber-600 after:content-[''] after:absolute after:top-1 after:left-1 after:bg-gray-400 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-7 peer-checked:after:bg-white"></div>
                     </label>
                 </div>
@@ -135,7 +135,7 @@ export default function SonicLab() {
             {/* Knobs Panel */}
             <div className="lg:col-span-2 bg-[#3d2b1f] p-8 relative">
                  {/* Wood texture overlay simulated with CSS in global, but here we just use bg color for now */}
-                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] opacity-30 pointer-events-none"></div>
+                 <div className="absolute inset-0 bg-[url('/textures/wood-pattern.webp')] opacity-30 pointer-events-none"></div>
 
                 <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8">
                     {/* Freq Knob */}
@@ -183,9 +183,9 @@ export default function SonicLab() {
                                     key={type}
                                     onClick={() => setWaveType(type)}
                                     className={`px-3 py-1 text-[10px] font-mono border transition-all uppercase ${
-                                        waveType === type 
-                                        ? 'bg-amber-600/20 text-amber-500 border-amber-600/50' 
-                                        : 'bg-zinc-800 text-gray-500 border-transparent hover:bg-zinc-700'
+                                        waveType === type
+                                        ? 'bg-amber-600/20 text-amber-500 border-amber-600/50'
+                                        : 'bg-zinc-800 text-gray-400 border-transparent hover:bg-zinc-700'
                                     }`}
                                 >
                                     {type.slice(0, 3)}

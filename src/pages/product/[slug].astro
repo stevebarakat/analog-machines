@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const { product } = Astro.props;
 ---
 
-<Layout title={product.name}>
+<Layout title={product.name} description={product.short_description}>
     <div class="mb-8">
         <a href="/shop" class="text-sm font-mono text-analog-gold hover:text-analog-cream mb-4 inline-block">&larr; BACK TO SHOP</a>
     </div>

@@ -3,7 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import SonicLab from "../components/SonicLab";
 ---
 
-<Layout title="Home">
+<Layout
+  title="Home"
+  description="Analog Machines Audio — hand-wired boutique analog synthesizers built with discrete circuitry. Shop The Monolith, The Prism, and The Ember. Free from menus, presets, and compromise."
+>
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/images/analog-darkness.webp" />
+  </Fragment>
+
   <!-- Navigation -->
   <nav
     class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center"
@@ -44,7 +51,10 @@ import SonicLab from "../components/SonicLab";
   >
     <img
       src="/images/analog-darkness.webp"
-      alt="Analog Machines Hero"
+      alt="Analog synthesizer bathed in amber light against a dark background"
+      fetchpriority="high"
+      width="1920"
+      height="1080"
       class="absolute inset-0 w-full h-full object-cover opacity-40"
     />
     <div
@@ -106,7 +116,10 @@ import SonicLab from "../components/SonicLab";
         <div class="overflow-hidden rounded mb-6 aspect-[4/3]">
           <img
             src="/images/monolith.webp"
-            alt="The Monolith"
+            alt="The Monolith — 3-VCO monophonic analog synthesizer"
+            loading="lazy"
+            width="800"
+            height="600"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
         </div>
@@ -150,7 +163,10 @@ import SonicLab from "../components/SonicLab";
         <div class="overflow-hidden rounded mb-6 aspect-[4/3]">
           <img
             src="/images/prism.webp"
-            alt="The Prism"
+            alt="The Prism — 8-voice polyphonic analog synthesizer"
+            loading="lazy"
+            width="800"
+            height="600"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
         </div>
@@ -194,7 +210,10 @@ import SonicLab from "../components/SonicLab";
         <div class="overflow-hidden rounded mb-6 aspect-[4/3]">
           <img
             src="/images/ember.webp"
-            alt="The Ember"
+            alt="The Ember — 6-channel analog drum synthesizer"
+            loading="lazy"
+            width="800"
+            height="600"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
         </div>
@@ -298,7 +317,10 @@ import SonicLab from "../components/SonicLab";
       <div class="md:w-1/2 relative">
         <img
           src="/images/circuit-board.webp"
-          alt="Hand Soldered Circuitry"
+          alt="Hand soldered circuit board with discrete components"
+          loading="lazy"
+          width="800"
+          height="600"
           class="rounded-lg shadow-2xl border border-white/10"
         />
         <div
@@ -326,77 +348,89 @@ import SonicLab from "../components/SonicLab";
         <!-- Artist 1 -->
         <div class="text-center group">
           <div
-            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 transition-all p-2 mb-6"
+            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 group-focus-within:border-amber-500 transition-all p-2 mb-6 group-hover:ring-2 group-hover:ring-amber-500/40"
           >
             <img
               src="/images/TrentReznor.webp"
               alt="Trent Reznor"
+              loading="lazy"
+              width="600"
+              height="600"
               class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
             />
           </div>
-          <h5 class="font-mono text-sm uppercase tracking-widest text-white">
+          <h4 class="font-mono text-sm uppercase tracking-widest text-white">
             Trent Reznor
-          </h5>
-          <p class="text-[10px] text-gray-500 mt-2 uppercase">
+          </h4>
+          <p class="text-[10px] text-gray-400 mt-2 uppercase">
             Industrial Icon
           </p>
         </div>
         <!-- Artist 2 -->
         <div class="text-center group">
           <div
-            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 transition-all p-2 mb-6"
+            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 group-focus-within:border-amber-500 transition-all p-2 mb-6 group-hover:ring-2 group-hover:ring-amber-500/40"
           >
             <img
               src="/images/HansZimmer.webp"
               alt="Hans Zimmer"
+              loading="lazy"
+              width="600"
+              height="600"
               class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
             />
           </div>
-          <h5 class="font-mono text-sm uppercase tracking-widest text-white">
+          <h4 class="font-mono text-sm uppercase tracking-widest text-white">
             Hans Zimmer
-          </h5>
-          <p class="text-[10px] text-gray-500 mt-2 uppercase">
+          </h4>
+          <p class="text-[10px] text-gray-400 mt-2 uppercase">
             Cinematic Legend
           </p>
         </div>
         <!-- Artist 3 -->
         <div class="text-center group">
           <div
-            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 transition-all p-2 mb-6"
+            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 group-focus-within:border-amber-500 transition-all p-2 mb-6 group-hover:ring-2 group-hover:ring-amber-500/40"
           >
             <img
               src="/images/SuzanneCiani.webp"
               alt="Suzanne Ciani"
+              loading="lazy"
+              width="600"
+              height="600"
               class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
             />
           </div>
-          <h5 class="font-mono text-sm uppercase tracking-widest text-white">
+          <h4 class="font-mono text-sm uppercase tracking-widest text-white">
             Suzanne Ciani
-          </h5>
-          <p class="text-[10px] text-gray-500 mt-2 uppercase">
+          </h4>
+          <p class="text-[10px] text-gray-400 mt-2 uppercase">
             Modular Pioneer
           </p>
         </div>
         <!-- Artist 4 -->
         <div class="text-center group">
           <div
-            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 transition-all p-2 mb-6"
+            class="relative overflow-hidden aspect-square rounded-full border-2 border-transparent group-hover:border-amber-500 group-focus-within:border-amber-500 transition-all p-2 mb-6 group-hover:ring-2 group-hover:ring-amber-500/40"
           >
             <img
               src="/images/AphexTwin.webp"
-              alt="Richard D. James"
+              alt="Richard D. James (Aphex Twin)"
+              loading="lazy"
+              width="600"
+              height="600"
               class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
             />
           </div>
-          <h5 class="font-mono text-sm uppercase tracking-widest text-white">
+          <h4 class="font-mono text-sm uppercase tracking-widest text-white">
             Aphex Twin
-          </h5>
-          <p class="text-[10px] text-gray-500 mt-2 uppercase">IDM Visionary</p>
+          </h4>
+          <p class="text-[10px] text-gray-400 mt-2 uppercase">IDM Visionary</p>
         </div>
       </div>
 
       <div
-        class="mt-16 text-center text-xs font-mono text-gray-500 max-w-2xl mx-auto leading-relaxed"
+        class="mt-16 text-center text-xs font-mono text-gray-400 max-w-2xl mx-auto leading-relaxed"
       >
         Our designs are inspired by the legacies of Robert Moog, Don Buchla, and
         Dave Smith—masters who proved that electricity is the ultimate

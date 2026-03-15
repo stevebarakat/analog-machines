@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)",
+      "Bash(git checkout:*)",
+      "Bash(which lighthouse:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(/Users/sb/.volta/bin/lighthouse http://localhost:4322 --output=json --output-path=./lighthouse-final.json --chrome-flags=\"--headless --no-sandbox\" --only-categories=performance,accessibility,best-practices,seo 2>&1 | tail -30)",
+      "Bash(node:*)",
+      "Bash(pkill:*)",
+      "Bash(/Users/sb/.volta/bin/lighthouse http://localhost:4325 --output=json --output-path=./lighthouse-final.json --chrome-flags=\"--headless --no-sandbox\" --only-categories=performance,accessibility,best-practices,seo 2>&1 | grep -E \"\\(LH:status Generating|LH:Printer|error\\)\" | head -5)"
+    ]
+  }
+}

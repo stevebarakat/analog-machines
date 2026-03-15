@@ -18,7 +18,7 @@
   }
 
   .wood-panel {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/textures/wood-pattern.webp');
     background-color: #3d2b1f;
   }
 
