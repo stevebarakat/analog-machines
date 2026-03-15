@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SonicLab from "../components/SonicLab";
+import Icon from "../components/Icon.astro";
 ---
 
 <Layout
@@ -16,9 +17,7 @@ import SonicLab from "../components/SonicLab";
     class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center"
   >
     <div class="flex items-center space-x-2">
-      <span class="material-symbols-outlined text-amber-500 text-3xl"
-        >electric_bolt</span
-      >
+      <Icon name="electric_bolt" class="w-8 h-8 text-amber-500" />
       <span class="font-serif text-2xl tracking-tight text-white"
         >Analog Machines</span
       >
@@ -80,10 +79,9 @@ import SonicLab from "../components/SonicLab";
       >
         <a
           href="#lab"
-          class="px-8 py-3 border border-amber-500/50 text-amber-500 font-mono text-sm hover:bg-amber-500/10 transition-all flex items-center"
+          class="px-8 py-3 border border-amber-500/50 text-amber-500 font-mono text-sm hover:bg-amber-500/10 transition-all flex items-center gap-2"
         >
-          <span class="material-symbols-outlined mr-2">graphic_eq</span> HEAR THE
-          DRIFT
+          <Icon name="graphic_eq" class="w-5 h-5" /> HEAR THE DRIFT
         </a>
         <a
           href="#instruments"
@@ -135,23 +133,17 @@ import SonicLab from "../components/SonicLab";
         <ul
           class="mt-6 space-y-2 text-sm text-gray-400 font-light border-t border-white/10 pt-4"
         >
-          <li class="flex items-center">
-            <span
-              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
-              >check_circle</span
-            > 24dB Moog-style Ladder Filter
+          <li class="flex items-center gap-2">
+            <Icon name="check_circle" class="w-4 h-4 shrink-0 text-amber-600" />
+            24dB Moog-style Ladder Filter
           </li>
-          <li class="flex items-center">
-            <span
-              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
-              >check_circle</span
-            > Pure Discrete Signal Path
+          <li class="flex items-center gap-2">
+            <Icon name="check_circle" class="w-4 h-4 shrink-0 text-amber-600" />
+            Pure Discrete Signal Path
           </li>
-          <li class="flex items-center">
-            <span
-              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
-              >check_circle</span
-            > Walnut End Cheeks
+          <li class="flex items-center gap-2">
+            <Icon name="check_circle" class="w-4 h-4 shrink-0 text-amber-600" />
+            Walnut End Cheeks
           </li>
         </ul>
       </div>
@@ -182,23 +174,17 @@ import SonicLab from "../components/SonicLab";
         <ul
           class="mt-6 space-y-2 text-sm text-gray-400 font-light border-t border-white/10 pt-4"
         >
-          <li class="flex items-center">
-            <span
-              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
-              >check_circle</span
-            > Stereo Analog Path
+          <li class="flex items-center gap-2">
+            <Icon name="check_circle" class="w-4 h-4 shrink-0 text-amber-600" />
+            Stereo Analog Path
           </li>
-          <li class="flex items-center">
-            <span
-              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
-              >check_circle</span
-            > 64-Slot Modulation Matrix
+          <li class="flex items-center gap-2">
+            <Icon name="check_circle" class="w-4 h-4 shrink-0 text-amber-600" />
+            64-Slot Modulation Matrix
           </li>
-          <li class="flex items-center">
-            <span
-              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
-              >check_circle</span
-            > Fatar TP/9S Keybed
+          <li class="flex items-center gap-2">
+            <Icon name="check_circle" class="w-4 h-4 shrink-0 text-amber-600" />
+            Fatar TP/9S Keybed
           </li>
         </ul>
       </div>
@@ -229,23 +215,17 @@ import SonicLab from "../components/SonicLab";
         <ul
           class="mt-6 space-y-2 text-sm text-gray-400 font-light border-t border-white/10 pt-4"
         >
-          <li class="flex items-center">
-            <span
-              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
-              >check_circle</span
-            > Individual Voice Outs
+          <li class="flex items-center gap-2">
+            <Icon name="check_circle" class="w-4 h-4 shrink-0 text-amber-600" />
+            Individual Voice Outs
           </li>
-          <li class="flex items-center">
-            <span
-              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
-              >check_circle</span
-            > Tube Drive Output Stage
+          <li class="flex items-center gap-2">
+            <Icon name="check_circle" class="w-4 h-4 shrink-0 text-amber-600" />
+            Tube Drive Output Stage
           </li>
-          <li class="flex items-center">
-            <span
-              class="material-symbols-outlined text-[16px] mr-2 text-amber-600"
-              >check_circle</span
-            > Cold Rolled Steel Case
+          <li class="flex items-center gap-2">
+            <Icon name="check_circle" class="w-4 h-4 shrink-0 text-amber-600" />
+            Cold Rolled Steel Case
           </li>
         </ul>
       </div>
@@ -303,9 +283,7 @@ import SonicLab from "../components/SonicLab";
             sound exactly the same.
           </p>
           <div class="flex items-start space-x-4 pt-4 border-t border-white/10">
-            <span class="material-symbols-outlined text-amber-600 text-3xl"
-              >thermostat</span
-            >
+            <Icon name="thermostat" class="w-8 h-8 shrink-0 text-amber-600" />
             <p class="text-sm italic">
               "Analog synthesizers embrace noise as an integral part of their
               sonic palette, resulting in a 80dB signal-to-noise ratio that
@@ -354,8 +332,8 @@ import SonicLab from "../components/SonicLab";
               src="/images/TrentReznor.webp"
               alt="Trent Reznor"
               loading="lazy"
-              width="600"
-              height="600"
+              width="400"
+              height="400"
               class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
             />
           </div>
@@ -375,8 +353,8 @@ import SonicLab from "../components/SonicLab";
               src="/images/HansZimmer.webp"
               alt="Hans Zimmer"
               loading="lazy"
-              width="600"
-              height="600"
+              width="400"
+              height="400"
               class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
             />
           </div>
@@ -396,8 +374,8 @@ import SonicLab from "../components/SonicLab";
               src="/images/SuzanneCiani.webp"
               alt="Suzanne Ciani"
               loading="lazy"
-              width="600"
-              height="600"
+              width="400"
+              height="400"
               class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
             />
           </div>
@@ -417,8 +395,8 @@ import SonicLab from "../components/SonicLab";
               src="/images/AphexTwin.webp"
               alt="Richard D. James (Aphex Twin)"
               loading="lazy"
-              width="600"
-              height="600"
+              width="400"
+              height="400"
               class="w-full h-full object-cover rounded-full filter grayscale group-hover:grayscale-0 transition-all"
             />
           </div>
